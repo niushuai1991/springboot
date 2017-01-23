@@ -22,10 +22,11 @@ public class UserServiceTest {
     @Before
     public void setUp() {
         // 准备，清空user表
-        userService.deleteAllUsers();
+        //userService.deleteAllUsers();
     }
     @Test
     public void test() throws Exception {
+        int count = userService.getAllUsers();
         // 插入5个用户
         userService.create("a", 1);
         userService.create("b", 2);
@@ -34,15 +35,18 @@ public class UserServiceTest {
         userService.create("e", 5);
 
         // 查数据库，应该有5个用户
-        Assert.assertEquals(5, userService.getAllUsers().intValue());
+        Assert.assertEquals(count+5, userService.getAllUsers().intValue());
         // 删除两个用户
         userService.deleteByName("a");
         userService.deleteByName("e");
         // 查数据库，应该有5个用户
-        Assert.assertEquals(3, userService.getAllUsers().intValue());
+        Assert.assertEquals(count-3, userService.getAllUsers().intValue());
 
+        userService.deleteByName("b");
+        userService.deleteByName("c");
+        userService.deleteByName("d");
 
-
+        Assert.assertEquals(count, userService.getAllUsers().intValue());
     }
 
 }

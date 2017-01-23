@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteAllUsers() {
-        jdbcTemplate.update("delete from USER");
+        jdbcTemplate.update("delete from USER where 1=1");
     }
 
 
