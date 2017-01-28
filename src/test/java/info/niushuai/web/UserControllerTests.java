@@ -34,6 +34,8 @@ public class UserControllerTests {
     }
 
     @Test
+    public void test(){}
+
     public void testUserController() throws Exception{
         // 测试UserController
         RequestBuilder request;

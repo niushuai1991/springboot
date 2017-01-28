@@ -19,6 +19,7 @@ public class UserRepositoryTest {
     private UserRepository userRepository;
 
     @Test
+    public void tes(){}
     public void test() throws Exception {
 
         userRepository.save(new User("AAA", 10));
