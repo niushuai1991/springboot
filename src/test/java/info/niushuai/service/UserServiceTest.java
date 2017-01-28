@@ -16,25 +16,26 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @WebAppConfiguration
 public class UserServiceTest {
 
-//    @Autowired
-//    private UserService userService;
-//
-//    private static final String name = "小明-33gr4";
-//
-//    @Test
-//    public void createTest(){
-//        Assert.assertEquals(1, userService.create(name,12));
-//    }
-//
-//    @Test
-//    public void deleteByNameTest(){
-//        Assert.assertEquals(1, userService.deleteByName(name));
-//        Assert.assertEquals(0, userService.deleteByName("小明-fhgr4"));
-//    }
-//
-//    @Test
-//    public void getAllUsersTest(){
-//        Assert.assertTrue(userService.getAllUsers()>=0);
-//    }
+    @Autowired
+    private UserService userService;
+
+    private static final String name = "小明-33gr4";
+
+    @Test
+    public void createTest(){
+
+    }
+
+    @Test
+    public void deleteByNameTest(){
+        Assert.assertEquals(1, userService.create(name,12));
+        Assert.assertEquals(1, userService.deleteByName(name));
+        Assert.assertEquals(0, userService.deleteByName("小明-fhgr4"));
+    }
+
+    @Test
+    public void getAllUsersTest(){
+        Assert.assertTrue(userService.getAllUsers()>=0);
+    }
 
 }
